@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  @apply text-white bg-black;
+}
+
+section {
+  @apply px-20 pt-5 pb-10;
+}
+
+.sectionHeading {
+  @apply capitalize text-center mx-auto text-3xl font-bold;
+}
+
+.sectionSubHeading {
+  @apply text-sm text-center mx-auto mt-3 font-light;
+}
+
+.heroSection {
+  @apply min-h-screen90 flex flex-col justify-between items-center;
+}
+
+/* HEADER */
+header {
+  @apply flex flex-row justify-between items-center px-10 py-3;
+}
+
+.logoGrp {
+  @apply flex flex-row items-center gap-3;
+}
+
+.navList {
+  @apply flex flex-row items-center gap-4 capitalize;
+}
+
+.signInGrp {
+  @apply flex flex-row items-center gap-3;
+}
+
+/* HERO SECTION */
+.heroLogoGrp {
+  @apply flex flex-row justify-center items-center gap-10 mt-5;
+}
+
+.heroLogo {
+  @apply h-5;
+}
+
+/* SECTION 2 */
+
+/* SECTION 3 */
+.priceCardsGrp {
+  @apply flex flex-row items-center justify-between mt-10 gap-10;
+}
+
+.priceCard {
+  @apply p-3 rounded-lg border border-slate-500 bg-yellow-600;
+}
+
+.cardHeading {
+  @apply font-bold text-2xl capitalize;
+}
+
+.cardSubHeading {
+  @apply font-light text-sm my-3;
+}
+
+.cardPrice {
+  @apply text-3xl font-bold;
+}
+
+.cardTextGrp {
+  @apply flex flex-row gap-2 items-center py-2;
+}
+
+.cardBtn {
+  @apply capitalize px-4 py-2 rounded-lg w-11/12 mx-auto block mt-5 bg-blue-500;
+}
