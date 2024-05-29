@@ -1,6 +1,8 @@
 import HeroSection from "./HeroSection";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
+import Faq from "./Faq";
+import Footer from "./Footer";
 import logo from "./assets/Logo.png";
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
       <HeroSection />
       <Section2 />
       <Section3 />
+      <Faq />
+      <Footer logo={logo} />
     </div>
   );
 }

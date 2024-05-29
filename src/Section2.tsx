@@ -13,32 +13,31 @@ const Section2 = () => {
         expenses and investment.
       </p>
 
-      <img className="mt-5 w-3/4 mx-auto" src={chartImg} alt="charts" />
+      <img className="mt-5 md:w-3/4 mx-auto" src={chartImg} alt="charts" />
 
-      <div className="flex flex-row items-center justify-between pt-20">
-        <div className="w-1/2">
-          <h1 className="capitalize text-3xl font-bold mb-3">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
+        <div className="md:w-1/2">
+          <h1 className="capitalize text-2xl md:text-3xl font-bold mb-3">
             personalized investment recommendation
           </h1>
 
-          <p className="font-light w-2/3">
+          <p className="font-light lg:w-2/3">
             Stay ahead of the market with our data-driven recommendations to
             help you navigate the market with confidence and precision with
-            low-risk picks, acheiving your investment objectives and to enhance
+            low-risk picks, achieving your investment objectives and to enhance
             your portfolio’s performance.
           </p>
         </div>
 
-        <img className="w-1/2" src={chartImg2} alt="cards" />
+        <img className="md:w-1/2" src={chartImg2} alt="cards" />
       </div>
 
-      <div className="flex flex-row items-center justify-between pt-20">
-        <img className="w-1/2" src={chartImg3} alt="cards" />
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
+        <img className="md:w-1/2" src={chartImg3} alt="cards" />
 
-        <div className="w-1/3">
-          <h1 className="capitalize text-3xl font-bold">portfolio</h1>
-          <h1 className="capitalize text-3xl font-bold mb-3">
-            diversification
+        <div className="md:w-1/3">
+          <h1 className="md:w-[200px] capitalize text-2xl md:text-3xl font-bold">
+            portfolio diversification
           </h1>
 
           <p className="font-light">
@@ -50,8 +49,8 @@ const Section2 = () => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-between pt-20">
-        <div className="w-1/3">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
+        <div className="md:w-1/3">
           <h1 className="capitalize text-3xl font-bold mb-3">
             Security & Privacy
           </h1>
@@ -64,7 +63,7 @@ const Section2 = () => {
           </p>
         </div>
 
-        <img className="w-1/2" src={lock} alt="lock effect" />
+        <img className="md:w-1/2" src={lock} alt="lock effect" />
       </div>
     </section>
   );

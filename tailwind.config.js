@@ -9,6 +9,9 @@ export default {
       },
       width:{
         heroHeading:'850px'
+      },
+      minWidth:{
+        screen:'100%'
       }
     },
   },

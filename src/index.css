@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 .App {
-  @apply text-white bg-black;
+  @apply text-white bg-black max-w-full;
 }
 
 section {
-  @apply px-20 pt-5 pb-10;
+  @apply lg:min-h-screen90 px-5 md:px-20 py-10;
 }
 
 .sectionHeading {
-  @apply capitalize text-center mx-auto text-3xl font-bold;
+  @apply capitalize text-center mx-auto text-2xl md:text-3xl font-bold;
 }
 
 .sectionSubHeading {
@@ -19,7 +19,7 @@ section {
 }
 
 .heroSection {
-  @apply min-h-screen90 flex flex-col justify-between items-center;
+  @apply flex flex-col md:justify-between items-center;
 }
 
 /* HEADER */
@@ -41,22 +41,22 @@ header {
 
 /* HERO SECTION */
 .heroLogoGrp {
-  @apply flex flex-row justify-center items-center gap-10 mt-5;
+  @apply flex flex-row justify-center items-center gap-10 mt-5 flex-wrap;
 }
 
 .heroLogo {
-  @apply h-5;
+  @apply h-6 md:h-5;
 }
 
 /* SECTION 2 */
 
 /* SECTION 3 */
 .priceCardsGrp {
-  @apply flex flex-row items-center justify-between mt-10 gap-10;
+  @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10;
 }
 
 .priceCard {
-  @apply p-3 rounded-lg border border-slate-500 bg-yellow-600;
+  @apply w-10/12 md:w-auto p-3 rounded-lg border border-slate-500 bg-yellow-600;
 }
 
 .cardHeading {
@@ -64,11 +64,11 @@ header {
 }
 
 .cardSubHeading {
-  @apply font-light text-sm my-3;
+  @apply font-light text-sm mt-2;
 }
 
 .cardPrice {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold mt-3;
 }
 
 .cardTextGrp {
@@ -77,4 +77,30 @@ header {
 
 .cardBtn {
   @apply capitalize px-4 py-2 rounded-lg w-11/12 mx-auto block mt-5 bg-blue-500;
+}
+
+/* FAQ */
+.faqGrp {
+  @apply w-full lg:w-3/4 mt-5 flex flex-col gap-10;
+}
+
+.faqHeading {
+  @apply flex flex-row justify-between items-center cursor-pointer hover:scale-105 transition duration-200;
+}
+
+.faqAnswer {
+  @apply font-light mt-2 text-sm;
+}
+
+.getStartedSection {
+  @apply w-10/12 md:w-[833px] h-[152px] md:h-[328px] mx-auto p-5 md:p-10 rounded-lg flex flex-row justify-between items-end bg-blue-600 relative top-16;
+}
+
+/* FOOTER */
+.colHeading {
+  @apply capitalize font-semibold mb-5;
+}
+
+.colText {
+  @apply font-light text-sm mb-3;
 }
