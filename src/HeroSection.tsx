@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     <section className="heroSection">
       <div>
-        <h1 className="w-[389px] md:w-heroHeading mx-auto text-center font-bold md:text-5xl text-2xl capitalize mt-20">
+        <h1 className="w-[360px] md:w-10/12 lg:w-heroHeading mx-auto text-center font-bold  lg:text-5xl md:text-4xl text-2xl capitalize mt-10 md:mt-20">
           revolutionize your investments with AI-powered management
         </h1>
 
@@ -26,12 +26,20 @@ const HeroSection = () => {
       </div>
 
       <div>
-        <div className="flex flex-row items-center justify-center gap-5 mt-20">
-          <img src={leftArrow} className="w-20 md:w-auto" alt="left arrow" />
+        <div className="flex flex-row items-center justify-center gap-2 md:gap-5 mt-20">
+          <img
+            src={leftArrow}
+            className="w-20 md:w-32 lg:w-auto"
+            alt="left arrow"
+          />
 
           <p className="capitalize text-xs">trusted by various top companies</p>
 
-          <img src={rightArrow} className="w-20 md:w-auto" alt="right arrow" />
+          <img
+            src={rightArrow}
+            className="w-20 md:w-32 lg:w-auto"
+            alt="right arrow"
+          />
         </div>
 
         <div className="heroLogoGrp">

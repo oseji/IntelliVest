@@ -15,7 +15,7 @@ const Section2 = () => {
 
       <img className="mt-5 md:w-3/4 mx-auto" src={chartImg} alt="charts" />
 
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-0 pt-20">
         <div className="md:w-1/2">
           <h1 className="capitalize text-2xl md:text-3xl font-bold mb-3">
             personalized investment recommendation
