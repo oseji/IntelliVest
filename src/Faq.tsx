@@ -1,6 +1,23 @@
+import { useRef } from "react";
 import downArrow from "./assets/down arrow.png";
 
 const Faq = () => {
+  const faqRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
+
+  const toggleFaq = () => {
+    faqRefs.forEach((element) => {
+      const faq = element.current;
+      faq?.classList.toggle("hidden");
+    });
+  };
+
   return (
     <div className="relative bg-yellow-600 ">
       <section className="flex flex-col md:flex-row items-start lg:justify-between gap-10 lg:gap-20 ">
@@ -17,14 +34,14 @@ const Faq = () => {
 
         <div className="faqGrp">
           <div className="faq">
-            <div className="faqHeading">
+            <div className="faqHeading" onClick={toggleFaq}>
               <h1 className="font-bold">
                 What is your platform’s primary focus?
               </h1>
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden">
+            <div className="faqAnswer hidden" ref={faqRefs[0]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -40,7 +57,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden">
+            <div className="faqAnswer hidden" ref={faqRefs[1]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -56,7 +73,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden">
+            <div className="faqAnswer hidden" ref={faqRefs[2]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -72,7 +89,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden">
+            <div className="faqAnswer hidden" ref={faqRefs[3]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -88,7 +105,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden">
+            <div className="faqAnswer hidden" ref={faqRefs[4]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -104,7 +121,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden">
+            <div className="faqAnswer hidden" ref={faqRefs[5]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita

@@ -9,7 +9,7 @@ import logo6 from "./assets/Logo 6.png";
 
 const HeroSection = () => {
   return (
-    <section className="heroSection">
+    <section className="heroSection" id="about">
       <div>
         <h1 className="w-[360px] md:w-10/12 lg:w-heroHeading mx-auto text-center font-bold  lg:text-5xl md:text-4xl text-2xl capitalize mt-10 md:mt-20">
           revolutionize your investments with AI-powered management

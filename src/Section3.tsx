@@ -1,8 +1,11 @@
+import { useState } from "react";
 import tick from "./assets/system-uicons_check.png";
 
 const Section3 = () => {
+  const [isMonthly, setIsMonthly] = useState<boolean>(true);
+
   return (
-    <section>
+    <section id="pricing">
       <h1 className="sectionHeading">
         Flexible Pricing Plans To Suit Your Needs.
       </h1>
@@ -12,9 +15,18 @@ const Section3 = () => {
         and investment goals
       </p>
 
-      <div className="flex flex-row justify-center gap-5 p-2 rounded-lg bg-yellow-400 w-fit mx-auto mt-5">
-        <button className="px-4 py-2 bg-red-400 rounded-lg">Monthly</button>
-        <button className="px-4 py-2 bg-red-400 rounded-lg">
+      <div className="flex flex-row justify-center gap-5 p-2 rounded-lg bg-yellow-700 w-fit mx-auto mt-5">
+        <button
+          className="px-4 py-2 bg-red-400 rounded-lg"
+          onClick={() => setIsMonthly(true)}
+        >
+          Monthly
+        </button>
+
+        <button
+          className="px-4 py-2  rounded-lg"
+          onClick={() => setIsMonthly(false)}
+        >
           Annually (save up to 20%)
         </button>
       </div>
@@ -27,8 +39,10 @@ const Section3 = () => {
           </p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
-            <h1 className="cardPrice">$9.99</h1>
-            <p className="font-light text-sm">/month</p>
+            <h1 className="cardPrice">{isMonthly ? "$9.99" : "$29.99"}</h1>
+            <p className="font-light text-sm">
+              {isMonthly ? "/month" : "/year"}
+            </p>
           </div>
 
           <div className="cardTextGrp mt-3">
@@ -62,8 +76,11 @@ const Section3 = () => {
           <p className="cardSubHeading">Customizable financial management</p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
-            <h1 className="cardPrice">$19.99</h1>
-            <p className="font-light text-sm">/month</p>
+            <h1 className="cardPrice">{isMonthly ? "$19.99" : "$49.99"}</h1>
+            <p className="font-light text-sm">
+              {" "}
+              {isMonthly ? "/month" : "/year"}
+            </p>
           </div>
 
           <div className="cardTextGrp mt-3">
@@ -97,8 +114,10 @@ const Section3 = () => {
           </p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
-            <h1 className="cardPrice">$29.99</h1>
-            <p className="font-light text-sm">/month</p>
+            <h1 className="cardPrice">{isMonthly ? "$29.99" : "$299.99"}</h1>
+            <p className="font-light text-sm">
+              {isMonthly ? "/month" : "/year"}
+            </p>
           </div>
 
           <div className="cardTextGrp mt-3">

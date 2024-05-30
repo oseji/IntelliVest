@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import HeroSection from "./HeroSection";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
@@ -8,12 +8,11 @@ import logo from "./assets/Logo.png";
 import menu from "./assets/menu.svg";
 
 function App() {
-  //const [menuToggled, setMenuToggled] = useState<boolean>(false);
-  const navBarRef = useRef(null);
+  const navBarRef = useRef<HTMLElement>(null);
 
   const toggleMenu = () => {
     const navBar = navBarRef.current;
-    navBar.classList.toggle("hideNav");
+    navBar?.classList.toggle("hideNav");
   };
 
   return (
@@ -36,16 +35,16 @@ function App() {
         <nav className="hideNav" ref={navBarRef}>
           <ul className="navList">
             <li className="navText">
-              <a href="#">about</a>
+              <a href="#about">about</a>
             </li>
             <li className="navText">
-              <a href="#">features</a>
+              <a href="#features">features</a>
             </li>
             <li className="navText">
-              <a href="#">AI solutions</a>
+              <a href="#aiSolutions">AI solutions</a>
             </li>
             <li className="navText">
-              <a href="#">pricing</a>
+              <a href="#pricing">pricing</a>
             </li>
           </ul>
 

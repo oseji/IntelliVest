@@ -6,7 +6,9 @@ import lock from "./assets/lock effect.png";
 const Section2 = () => {
   return (
     <section className="min-h-screen90">
-      <h1 className="sectionHeading">Simplify your finances with AI</h1>
+      <h1 className="sectionHeading" id="aiSolutions">
+        Simplify your finances with AI
+      </h1>
 
       <p className="sectionSubHeading">
         Empower your finance with Artificial Intelligence. Seamlessly track
@@ -15,7 +17,10 @@ const Section2 = () => {
 
       <img className="mt-5 md:w-3/4 mx-auto" src={chartImg} alt="charts" />
 
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-0 pt-20">
+      <div
+        className="flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-0 pt-20"
+        id="features"
+      >
         <div className="md:w-1/2">
           <h1 className="capitalize text-2xl md:text-3xl font-bold mb-3">
             personalized investment recommendation
