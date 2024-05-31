@@ -23,6 +23,7 @@ function App() {
       return newValue;
     });
 
+    menuToggled;
     const navBar = navBarRef.current;
     navBar?.classList.toggle("hideNav");
   };
