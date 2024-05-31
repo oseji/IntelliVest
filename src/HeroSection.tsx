@@ -1,3 +1,4 @@
+import { TypeAnimation } from "react-type-animation";
 import leftArrow from "./assets/Group 6415.png";
 import rightArrow from "./assets/Group 6416.png";
 import logo1 from "./assets/Logo 1.png";
@@ -11,9 +12,20 @@ const HeroSection = () => {
   return (
     <section className="heroSection" id="about">
       <div>
-        <h1 className="w-[360px] md:w-10/12 lg:w-heroHeading mx-auto text-center font-bold  lg:text-5xl md:text-4xl text-2xl capitalize mt-20">
-          revolutionize your investments with AI-powered management
-        </h1>
+        <TypeAnimation
+          sequence={[
+            "revolutionize your investments with AI-powered management",
+            1000,
+            "revolutionize your investments with us",
+            2000,
+            "revolutionize your investments with AI-powered management",
+          ]}
+          className="w-[360px] md:w-10/12 lg:w-heroHeading mx-auto text-center font-bold  lg:text-5xl md:text-4xl text-2xl capitalize mt-20"
+          wrapper="h1"
+          speed={20}
+          repeat={0}
+          cursor={false}
+        />
 
         <p className="text-center mx-auto lg:mt-5 mt-7 text-sm ">
           Gain unparalleled insights, optimize investments, achieve your wealth

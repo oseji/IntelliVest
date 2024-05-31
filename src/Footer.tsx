@@ -7,7 +7,7 @@ const Footer = (props: footerProp) => {
     <footer className="px-5 md:px-20 pt-24 pb-5 bg-[#1D1C1C]">
       <div className="logoGrp">
         <img src={props.logo} alt="finGenius logo" />
-        <h1 className="font-semibold text-xl">FinGenius</h1>
+        <h1 className="font-semibold text-xl text-white">FinGenius</h1>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-0 mt-10 border-b border-slate-500 pb-10 text-white">
