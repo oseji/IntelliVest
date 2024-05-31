@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import tick from "./assets/system-uicons_check.png";
 
 const Section3 = () => {
@@ -7,6 +8,11 @@ const Section3 = () => {
     useRef<HTMLButtonElement>(null),
     useRef<HTMLButtonElement>(null),
   ];
+
+  const priceCardVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+  };
 
   return (
     <section id="pricing">
@@ -42,14 +48,19 @@ const Section3 = () => {
       </div>
 
       <div className="priceCardsGrp">
-        <div className="priceCard">
+        <motion.div
+          className="priceCard"
+          variants={priceCardVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
           <h1 className="cardHeading">Basic plan</h1>
           <p className="cardSubHeading">
             Basic Plan Essential tools to manage finances efficiently.
           </p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
-            <h1 className="cardPrice">{isMonthly ? "$9.99" : "$29.99"}</h1>
+            <h1 className="cardPrice">{isMonthly ? "$9.99" : "$99.99"}</h1>
             <p className="font-light text-sm">
               {isMonthly ? "/month" : "/year"}
             </p>
@@ -79,14 +90,19 @@ const Section3 = () => {
           </div>
 
           <button className="cardBtn">get started</button>
-        </div>
+        </motion.div>
 
-        <div className="priceCard border border-black">
+        <motion.div
+          className="priceCard border border-black"
+          variants={priceCardVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
           <h1 className="cardHeading">Premium plan</h1>
           <p className="cardSubHeading">Customizable financial management</p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
-            <h1 className="cardPrice">{isMonthly ? "$19.99" : "$49.99"}</h1>
+            <h1 className="cardPrice">{isMonthly ? "$19.99" : "$190.99"}</h1>
             <p className="font-light text-sm">
               {" "}
               {isMonthly ? "/month" : "/year"}
@@ -115,16 +131,21 @@ const Section3 = () => {
           </div>
 
           <button className="cardBtn">start 7 days trial</button>
-        </div>
+        </motion.div>
 
-        <div className="priceCard">
+        <motion.div
+          className="priceCard"
+          variants={priceCardVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
           <h1 className="cardHeading">Elite plan</h1>
           <p className="cardSubHeading">
             VIP and pinnacle of financial empowerment...
           </p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
-            <h1 className="cardPrice">{isMonthly ? "$29.99" : "$299.99"}</h1>
+            <h1 className="cardPrice">{isMonthly ? "$29.99" : "$290.99"}</h1>
             <p className="font-light text-sm">
               {isMonthly ? "/month" : "/year"}
             </p>
@@ -154,7 +175,7 @@ const Section3 = () => {
           </div>
 
           <button className="cardBtn">get started</button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

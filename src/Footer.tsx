@@ -55,7 +55,7 @@ const Footer = (props: footerProp) => {
               className="w-[224px] border border-slate-500 bg-transparent rounded-lg p-2 placeholder:font-light"
               placeholder="Email Address"
             />
-            <button className="px-4 py-2 rounded-lg bg-[#938888] hover:scale-105 transition ease-in-out duration-150">
+            <button className="px-4 py-2 rounded-lg bg-[#938888] hover:scale-110 transition ease-in-out duration-150">
               Get started
             </button>
           </form>

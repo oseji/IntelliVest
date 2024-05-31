@@ -1,9 +1,14 @@
-import chartImg from "./assets/chart image.png";
-import chartImg2 from "./assets/chart2.png";
-import chartImg3 from "./assets/chart 3.png";
-import lock from "./assets/lock effect.png";
+import { motion } from "framer-motion";
+import chartImg from "./assets/Frame 893.png";
+import chartImg2 from "./assets/Group 6421.png";
+import chartImg3 from "./assets/Frame 934.svg";
+import lock from "./assets/lock effect.svg";
 
 const Section2 = () => {
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+  };
   return (
     <section className="min-h-screen90">
       <h1 className="sectionHeading" id="aiSolutions">
@@ -15,7 +20,14 @@ const Section2 = () => {
         expenses and investment.
       </p>
 
-      <img className="mt-5 md:w-3/4 mx-auto" src={chartImg} alt="charts" />
+      <motion.img
+        className="mt-5 md:w-3/4 mx-auto"
+        variants={imageVariants}
+        initial="hidden"
+        whileInView="visible"
+        src={chartImg}
+        alt="charts"
+      />
 
       <div
         className="flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-0 pt-20"
@@ -34,11 +46,25 @@ const Section2 = () => {
           </p>
         </div>
 
-        <img className="md:w-1/2" src={chartImg2} alt="cards" />
+        <motion.img
+          className="md:w-1/2"
+          variants={imageVariants}
+          initial="hidden"
+          whileInView="visible"
+          src={chartImg2}
+          alt="cards"
+        />
       </div>
 
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
-        <img className="md:w-1/2" src={chartImg3} alt="cards" />
+        <motion.img
+          className="md:w-1/2"
+          variants={imageVariants}
+          initial="hidden"
+          whileInView="visible"
+          src={chartImg3}
+          alt="cards"
+        />
 
         <div className="md:w-1/3">
           <h1 className="md:w-[200px] capitalize text-2xl md:text-3xl font-bold">
@@ -68,7 +94,14 @@ const Section2 = () => {
           </p>
         </div>
 
-        <img className="md:w-1/2" src={lock} alt="lock effect" />
+        <motion.img
+          className="md:w-1/2"
+          variants={imageVariants}
+          initial="hidden"
+          whileInView="visible"
+          src={lock}
+          alt="lock effect"
+        />
       </div>
     </section>
   );

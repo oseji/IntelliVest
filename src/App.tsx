@@ -34,7 +34,7 @@ function App() {
         <div className="flex flex-row justify-between w-full lg:w-auto">
           <div className="logoGrp">
             <img src={logo} alt="finGenius logo" />
-            <h1>FinGenius</h1>
+            <h1 className="font-bold">FinGenius</h1>
           </div>
 
           <img

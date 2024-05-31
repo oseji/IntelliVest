@@ -19,12 +19,12 @@ const Faq = () => {
 
     faqRefs.forEach((element) => {
       const faq = element.current;
-      faq?.classList.toggle("hidden");
+      faq?.classList.toggle("hiddenAnswer");
     });
   };
 
   return (
-    <section className="relative bg-yellow-600 ">
+    <section className="relative">
       <div className="flex flex-col md:flex-row items-start lg:justify-between gap-10 lg:gap-20 ">
         <div>
           <h1 className="capitalize text-3xl font-bold">
@@ -46,7 +46,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden" ref={faqRefs[0]}>
+            <div className="faqAnswer hiddenAnswer" ref={faqRefs[0]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -62,7 +62,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden" ref={faqRefs[1]}>
+            <div className="faqAnswer hiddenAnswer" ref={faqRefs[1]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -78,7 +78,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden" ref={faqRefs[2]}>
+            <div className="faqAnswer hiddenAnswer" ref={faqRefs[2]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -94,7 +94,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden" ref={faqRefs[3]}>
+            <div className="faqAnswer hiddenAnswer" ref={faqRefs[3]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -110,7 +110,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden" ref={faqRefs[4]}>
+            <div className="faqAnswer hiddenAnswer" ref={faqRefs[4]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -126,7 +126,7 @@ const Faq = () => {
               <img src={downArrow} alt="down arrow" />
             </div>
 
-            <div className="faqAnswer hidden" ref={faqRefs[5]}>
+            <div className="faqAnswer hiddenAnswer" ref={faqRefs[5]}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Accusantium eaque officia perferendis ad, expedita adipisci
               quisquam aspernatur facere reiciendis est. Sequi nesciunt expedita
@@ -141,7 +141,7 @@ const Faq = () => {
           Your Money, Your Rules; Powerful Insights Awaits.
         </h1>
 
-        <button className="px-4 py-2 rounded-lg hover:scale-105 transition ease-in-out duration-150 bg-[#938888]">
+        <button className="px-4 py-2 rounded-lg hover:scale-110 transition ease-in-out duration-150 bg-[#938888]">
           Get Started
         </button>
       </div>

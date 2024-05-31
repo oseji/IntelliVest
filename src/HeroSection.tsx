@@ -1,5 +1,5 @@
-import leftArrow from "./assets/left arrow.png";
-import rightArrow from "./assets/right arrow.png";
+import leftArrow from "./assets/Group 6415.png";
+import rightArrow from "./assets/Group 6416.png";
 import logo1 from "./assets/Logo 1.png";
 import logo2 from "./assets/Logo 2.png";
 import logo3 from "./assets/Logo 3.png";
@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     <section className="heroSection" id="about">
       <div>
-        <h1 className="w-[360px] md:w-10/12 lg:w-heroHeading mx-auto text-center font-bold  lg:text-5xl md:text-4xl text-2xl capitalize mt-10 md:mt-20">
+        <h1 className="w-[360px] md:w-10/12 lg:w-heroHeading mx-auto text-center font-bold  lg:text-5xl md:text-4xl text-2xl capitalize mt-20">
           revolutionize your investments with AI-powered management
         </h1>
 
@@ -20,7 +20,7 @@ const HeroSection = () => {
           goals, and take control of your finances.
         </p>
 
-        <button className="px-4 py-2  rounded-lg block mx-auto lg:mt-5 mt-7 bg-[#938888] hover:scale-105 transition ease-in-out duration-150">
+        <button className="px-4 py-2  rounded-lg block mx-auto lg:mt-5 mt-7 bg-[#938888] hover:scale-110 transition ease-in-out duration-150">
           Get Started
         </button>
       </div>
@@ -33,7 +33,7 @@ const HeroSection = () => {
             alt="left arrow"
           />
 
-          <p className="capitalize text-xs ">
+          <p className="capitalize text-xs text-center">
             trusted by various top companies
           </p>
 
