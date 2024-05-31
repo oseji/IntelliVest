@@ -1,16 +1,28 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import HeroSection from "./HeroSection";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
 import Faq from "./Faq";
 import Footer from "./Footer";
-import logo from "./assets/Logo.png";
+import logo from "./assets/Logo.svg";
 import menu from "./assets/menu.svg";
+import closeMenu from "./assets/close.svg";
 
 function App() {
+  const [menuToggled, setIsMenuToggled] = useState<boolean>(false);
+  const [menuIcon, setMenuIcon] = useState<string>(menu);
+
   const navBarRef = useRef<HTMLElement>(null);
 
   const toggleMenu = () => {
+    setIsMenuToggled((prevValue) => {
+      const newValue = !prevValue;
+
+      setMenuIcon(newValue ? closeMenu : menu);
+
+      return newValue;
+    });
+
     const navBar = navBarRef.current;
     navBar?.classList.toggle("hideNav");
   };
@@ -25,7 +37,7 @@ function App() {
           </div>
 
           <img
-            src={menu}
+            src={menuIcon}
             className="h-6 lg:hidden"
             alt="menu icon"
             onClick={toggleMenu}
@@ -49,13 +61,9 @@ function App() {
           </ul>
 
           <div className="signInGrp">
-            <button className="capitalize px-4 py-2 rounded-lg border border-slate-500">
-              log in
-            </button>
+            <button className="navBtn border border-black">log in</button>
 
-            <button className="capitalize px-4 py-2 rounded-lg border border-slate-500">
-              sign up
-            </button>
+            <button className="navBtn bg-[#938888] ">sign up</button>
           </div>
         </nav>
       </header>

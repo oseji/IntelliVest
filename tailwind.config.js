@@ -12,6 +12,9 @@ export default {
       },
       minWidth:{
         screen:'100%'
+      },
+      colors:{
+        'background':'#00000F'
       }
     },
   },

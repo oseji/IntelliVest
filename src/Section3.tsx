@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import tick from "./assets/system-uicons_check.png";
 
 const Section3 = () => {
   const [isMonthly, setIsMonthly] = useState<boolean>(true);
+  const activePriceRefs = [
+    useRef<HTMLButtonElement>(null),
+    useRef<HTMLButtonElement>(null),
+  ];
 
   return (
     <section id="pricing">
@@ -15,16 +19,22 @@ const Section3 = () => {
         and investment goals
       </p>
 
-      <div className="flex flex-row justify-center gap-5 p-2 rounded-lg bg-yellow-700 w-fit mx-auto mt-5">
+      <div className="flex flex-row justify-center gap-5 p-2 rounded-xl  w-fit mx-auto mt-5 ">
         <button
-          className="px-4 py-2 bg-red-400 rounded-lg"
+          className={`px-4 py-2 rounded-xl transition ease-in-out duration-200 ${
+            isMonthly ? "activePrice" : ""
+          }`}
+          ref={activePriceRefs[0]}
           onClick={() => setIsMonthly(true)}
         >
           Monthly
         </button>
 
         <button
-          className="px-4 py-2  rounded-lg"
+          className={`px-4 py-2 rounded-xl transition ease-in-out duration-200 ${
+            !isMonthly ? "activePrice" : ""
+          }`}
+          ref={activePriceRefs[1]}
           onClick={() => setIsMonthly(false)}
         >
           Annually (save up to 20%)
@@ -71,7 +81,7 @@ const Section3 = () => {
           <button className="cardBtn">get started</button>
         </div>
 
-        <div className="priceCard">
+        <div className="priceCard border border-black">
           <h1 className="cardHeading">Premium plan</h1>
           <p className="cardSubHeading">Customizable financial management</p>
 

@@ -7,7 +7,7 @@ html {
 }
 
 .App {
-  @apply text-white bg-black max-w-full;
+  @apply text-black bg-white max-w-full;
 }
 
 section {
@@ -19,7 +19,7 @@ section {
 }
 
 .sectionSubHeading {
-  @apply text-sm text-center mx-auto mt-3 font-light;
+  @apply text-sm text-center mx-auto mt-3;
 }
 
 .heroSection {
@@ -28,7 +28,7 @@ section {
 
 /* HEADER */
 header {
-  @apply w-full backdrop-blur-lg flex flex-col lg:flex-row justify-between items-center gap-10 px-5 md:px-10 py-3  fixed;
+  @apply w-full backdrop-blur-md flex flex-col lg:flex-row justify-between items-center gap-10 px-5 md:px-10 py-3  fixed z-10;
 }
 
 .logoGrp {
@@ -36,7 +36,7 @@ header {
 }
 
 nav {
-  @apply w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-between gap-10  transition ease-in-out duration-300 relative top-10 lg:top-0;
+  @apply w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-between gap-10  transition ease-in-out duration-300 relative;
 }
 
 .hideNav {
@@ -47,26 +47,38 @@ nav {
   @apply flex flex-col lg:flex-row items-center gap-4 capitalize;
 }
 
+.navText {
+  @apply hover:scale-105 transition ease-in-out duration-150;
+}
+
 .signInGrp {
   @apply flex flex-row items-center gap-3;
 }
 
+.navBtn {
+  @apply capitalize px-4 py-1 rounded-xl  hover:scale-105 transition ease-in-out duration-150;
+}
+
 /* HERO SECTION */
 .heroLogoGrp {
-  @apply flex flex-row justify-center items-center gap-10 mt-5 flex-wrap;
+  @apply grid grid-cols-3 md:flex md:flex-row md:justify-center md:items-center gap-5 md:gap-10 mt-5 flex-wrap;
 }
 
 .heroLogo {
-  @apply h-6 md:h-5;
+  @apply h-4 md:h-5 mx-auto md:mx-0;
 }
 
 /* SECTION 3 */
+.activePrice {
+  @apply bg-[#938888];
+}
+
 .priceCardsGrp {
   @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10 flex-wrap;
 }
 
 .priceCard {
-  @apply w-10/12 md:w-[45%] lg:w-auto p-3 rounded-lg border border-slate-500 bg-yellow-600 mx-auto;
+  @apply w-10/12 md:w-[45%] lg:w-auto p-3 rounded-xl mx-auto bg-gray-100 bg-opacity-95;
 }
 
 .cardHeading {
@@ -82,16 +94,20 @@ nav {
 }
 
 .cardTextGrp {
-  @apply flex flex-row gap-2 items-center py-2;
+  @apply flex flex-row gap-2 items-center py-2 font-light;
 }
 
 .cardBtn {
-  @apply capitalize px-4 py-2 rounded-lg w-11/12 mx-auto block mt-5 bg-blue-500 hover:scale-105 transition ease-in-out duration-200;
+  @apply capitalize px-4 py-2 rounded-xl w-11/12 mx-auto block mt-5 font-semibold bg-gradient-to-r from-slate-200 from-70% via-slate-100 via-85% to-transparent  hover:scale-105 transition ease-in-out duration-200;
 }
 
 /* FAQ */
 .faqGrp {
   @apply w-full lg:w-3/4 mt-5 flex flex-col gap-10;
+}
+
+.faq {
+  @apply bg-[#E7E6E6] p-3 rounded-xl;
 }
 
 .faqHeading {
@@ -103,7 +119,7 @@ nav {
 }
 
 .getStartedSection {
-  @apply w-10/12 md:w-10/12 h-[152px] md:h-[328px] mx-auto p-5 md:p-10 rounded-lg flex flex-row justify-between items-end bg-blue-600 relative top-16;
+  @apply w-11/12 md:w-10/12 h-[152px] md:h-[328px] mx-auto p-5 md:p-10 rounded-xl flex flex-row justify-between items-end bg-[#E7E6E6] relative top-28;
 }
 
 /* FOOTER */

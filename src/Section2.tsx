@@ -26,7 +26,7 @@ const Section2 = () => {
             personalized investment recommendation
           </h1>
 
-          <p className="font-light lg:w-2/3">
+          <p className=" lg:w-2/3">
             Stay ahead of the market with our data-driven recommendations to
             help you navigate the market with confidence and precision with
             low-risk picks, achieving your investment objectives and to enhance
@@ -45,7 +45,7 @@ const Section2 = () => {
             portfolio diversification
           </h1>
 
-          <p className="font-light">
+          <p>
             Optimize your investment portfolio with strategic diversification.
             Our expertly crafted approach spreads risk across various asset
             classes, ensuring stability and maximizing returns tailored to your
@@ -60,7 +60,7 @@ const Section2 = () => {
             Security & Privacy
           </h1>
 
-          <p className="font-light">
+          <p className="">
             Your security and privacy are our top priorities. Rest assured
             knowing that our platform employs state-of-the- art encryption,
             stringent security protocols. and strict privacy measures to

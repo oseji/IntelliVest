@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { SyntheticEvent, useRef } from "react";
 import downArrow from "./assets/down arrow.png";
 
 const Faq = () => {
@@ -11,7 +11,12 @@ const Faq = () => {
     useRef<HTMLDivElement>(null),
   ];
 
-  const toggleFaq = () => {
+  const toggleFaq = (e: SyntheticEvent) => {
+    e.preventDefault();
+
+    const faqNum = e.currentTarget.getAttribute("data-value");
+    console.log(faqNum);
+
     faqRefs.forEach((element) => {
       const faq = element.current;
       faq?.classList.toggle("hidden");
@@ -19,14 +24,14 @@ const Faq = () => {
   };
 
   return (
-    <div className="relative bg-yellow-600 ">
-      <section className="flex flex-col md:flex-row items-start lg:justify-between gap-10 lg:gap-20 ">
+    <section className="relative bg-yellow-600 ">
+      <div className="flex flex-col md:flex-row items-start lg:justify-between gap-10 lg:gap-20 ">
         <div>
           <h1 className="capitalize text-3xl font-bold">
             Frequently Asked Questions
           </h1>
 
-          <p className="font-light mt-3">
+          <p className="mt-3">
             Find answers to commonly asked questions about our platform services
             and features.
           </p>
@@ -34,7 +39,7 @@ const Faq = () => {
 
         <div className="faqGrp">
           <div className="faq">
-            <div className="faqHeading" onClick={toggleFaq}>
+            <div className="faqHeading" onClick={toggleFaq} data-value={1}>
               <h1 className="font-bold">
                 What is your platform’s primary focus?
               </h1>
@@ -50,7 +55,7 @@ const Faq = () => {
           </div>
 
           <div className="faq">
-            <div className="faqHeading">
+            <div className="faqHeading" onClick={toggleFaq} data-value={2}>
               <h1 className="font-bold">
                 How does automatic expense tracking work?
               </h1>
@@ -66,7 +71,7 @@ const Faq = () => {
           </div>
 
           <div className="faq">
-            <div className="faqHeading">
+            <div className="faqHeading" onClick={toggleFaq} data-value={3}>
               <h1 className="font-bold">
                 How does portfolio diversification benefit me?
               </h1>
@@ -82,7 +87,7 @@ const Faq = () => {
           </div>
 
           <div className="faq">
-            <div className="faqHeading">
+            <div className="faqHeading" onClick={toggleFaq} data-value={4}>
               <h1 className="font-bold">
                 Is my financial data secure on your platform?
               </h1>
@@ -98,7 +103,7 @@ const Faq = () => {
           </div>
 
           <div className="faq">
-            <div className="faqHeading">
+            <div className="faqHeading" onClick={toggleFaq} data-value={5}>
               <h1 className="font-bold">
                 What support options are available to users?
               </h1>
@@ -114,7 +119,7 @@ const Faq = () => {
           </div>
 
           <div className="faq">
-            <div className="faqHeading">
+            <div className="faqHeading" onClick={toggleFaq} data-value={6}>
               <h1 className="font-bold">
                 Can i upgrade or downgrade my subscription plan?
               </h1>
@@ -129,16 +134,18 @@ const Faq = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <div className="getStartedSection">
-        <h1 className="md:text-4xl text-2xl font-bold w-3/4  md:w-[412px]">
+        <h1 className="md:text-4xl text-lg font-bold w-1/2  md:w-[412px]">
           Your Money, Your Rules; Powerful Insights Awaits.
         </h1>
 
-        <button className="px-4 py-2 rounded-lg">Get Started</button>
+        <button className="px-4 py-2 rounded-lg hover:scale-105 transition ease-in-out duration-150 bg-[#938888]">
+          Get Started
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
 
