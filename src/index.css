@@ -15,7 +15,7 @@ html {
 }
 
 section {
-  @apply lg:min-h-screen px-5 md:px-20 py-10;
+  @apply min-h-screen px-5 md:px-20 py-10;
 }
 
 .sectionHeading {
