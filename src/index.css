@@ -1,9 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: NeueHaasDisplayRoman;
+  src: url("../public/fonts/NeueHaasDisplayRoman.ttf");
+}
 
 html {
-  @apply scroll-smooth;
+  @apply scroll-smooth font-NeueHaasDisplayRoman;
 }
 
 .App {
@@ -28,7 +32,7 @@ section {
 
 /* HEADER */
 header {
-  @apply w-full bg-white lg:flex flex-col lg:flex-row justify-between items-center gap-10 px-5 md:px-10 py-3 fixed z-10;
+  @apply w-full bg-white lg:flex flex-col lg:flex-row justify-between items-center gap-10 px-5 md:px-10 py-5 lg:py-3  shadow-md lg:shadow-none fixed z-10;
 }
 
 .logoGrp {
@@ -74,11 +78,11 @@ nav {
 }
 
 .priceCardsGrp {
-  @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10 flex-wrap;
+  @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10 xl:gap-0 flex-wrap;
 }
 
 .priceCard {
-  @apply w-10/12 md:w-[45%] lg:w-auto p-3 rounded-xl mx-auto bg-[#E7E6E6] bg-opacity-95;
+  @apply w-10/12 md:w-[350px] lg:w-auto 2xl:w-1/4 p-3 rounded-xl mx-auto bg-[#E7E6E6] bg-opacity-95;
 }
 
 .cardHeading {

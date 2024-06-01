@@ -15,6 +15,9 @@ export default {
       },
       colors:{
         'background':'#00000F'
+      },
+      fontFamily:{
+        NeueHaasDisplayRoman:['NeueHaasDisplayRoman','sans']
       }
     },
   },

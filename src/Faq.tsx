@@ -1,4 +1,5 @@
-import { SyntheticEvent, useRef } from "react";
+import { SyntheticEvent, useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import downArrow from "./assets/down arrow.png";
 
 const Faq = () => {
@@ -11,17 +12,49 @@ const Faq = () => {
     useRef<HTMLDivElement>(null),
   ];
 
+  const [clickedFaq, setClickedFaq] = useState<number>(0);
+
+  //this function handles toggling the clicked faqNumber
   const toggleFaq = (e: SyntheticEvent) => {
     e.preventDefault();
 
     const faqNum = e.currentTarget.getAttribute("data-value");
-    console.log(faqNum);
 
-    faqRefs.forEach((element) => {
-      const faq = element.current;
-      faq?.classList.toggle("hiddenAnswer");
+    setClickedFaq((prevNum) => {
+      let newNum = prevNum;
+
+      if (faqNum === "1") {
+        newNum = 1;
+      } else if (faqNum === "2") {
+        newNum = 2;
+      } else if (faqNum === "3") {
+        newNum = 3;
+      } else if (faqNum === "4") {
+        newNum = 4;
+      } else if (faqNum === "5") {
+        newNum = 5;
+      } else if (faqNum === "6") {
+        newNum = 6;
+      }
+
+      return newNum;
     });
   };
+
+  //this useEffect handles the visual toggling of the faq after the clickedFaq number changes
+  useEffect(() => {
+    console.log(clickedFaq);
+
+    faqRefs.forEach((element, id) => {
+      const faq = element.current;
+
+      if (id + 1 === clickedFaq) {
+        faq?.classList.toggle("hiddenAnswer");
+      } else if (id + 1 !== clickedFaq) {
+        faq?.classList.add("hiddenAnswer");
+      }
+    });
+  }, [clickedFaq]);
 
   return (
     <section className="relative">
@@ -137,9 +170,17 @@ const Faq = () => {
       </div>
 
       <div className="getStartedSection">
-        <h1 className="md:text-4xl text-lg font-bold w-1/2  md:w-[412px]">
+        <motion.h1
+          className="md:text-4xl text-lg font-bold w-1/2  md:w-[412px]"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.15, duration: 0.5 },
+          }}
+        >
           Your Money, Your Rules; Powerful Insights Awaits.
-        </h1>
+        </motion.h1>
 
         <button className="px-4 py-2 rounded-lg hover:scale-110 transition ease-in-out duration-150 bg-[#938888]">
           Get Started
