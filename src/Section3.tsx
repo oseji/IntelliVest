@@ -15,7 +15,7 @@ const Section3 = () => {
   };
 
   return (
-    <section id="pricing">
+    <div id="pricing">
       <h1 className="sectionHeading">
         Flexible Pricing Plans To Suit Your Needs.
       </h1>
@@ -56,7 +56,7 @@ const Section3 = () => {
         >
           <h1 className="cardHeading">Basic plan</h1>
           <p className="cardSubHeading">
-            Basic Plan Essential tools to manage finances efficiently.
+            Essential tools to manage finances efficiently.
           </p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
@@ -98,7 +98,13 @@ const Section3 = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <h1 className="cardHeading">Premium plan</h1>
+          <div className="flex flex-row items-center gap-3">
+            <h1 className="cardHeading">Premium plan</h1>
+            <span className="text-xs px-2 py-0.5 bg-black text-white rounded-lg">
+              Popular
+            </span>
+          </div>
+
           <p className="cardSubHeading">Customizable financial management</p>
 
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
@@ -177,7 +183,7 @@ const Section3 = () => {
           <button className="cardBtn">get started</button>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

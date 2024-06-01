@@ -11,7 +11,7 @@ import logo6 from "./assets/Logo 6.png";
 const HeroSection = () => {
   return (
     <section className="heroSection" id="about">
-      <div>
+      <div className="my-20 lg:my-40">
         <TypeAnimation
           sequence={[
             "revolutionize your investments with AI-powered management",
@@ -20,14 +20,14 @@ const HeroSection = () => {
             2000,
             "revolutionize your investments with AI-powered management",
           ]}
-          className="w-[360px] md:w-10/12 lg:w-heroHeading mx-auto text-center font-bold  lg:text-5xl md:text-4xl text-2xl capitalize mt-20"
+          className="w-[360px] md:w-10/12 lg:w-[934px] mx-auto text-center font-bold  lg:text-6xl md:text-4xl text-2xl capitalize mt-16 lg:mt-0"
           wrapper="h1"
           speed={20}
           repeat={0}
           cursor={false}
         />
 
-        <p className="text-center mx-auto lg:mt-5 mt-7 text-sm ">
+        <p className="text-center mx-auto lg:mt-5 mt-7 ">
           Gain unparalleled insights, optimize investments, achieve your wealth
           goals, and take control of your finances.
         </p>

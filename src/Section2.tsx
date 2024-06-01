@@ -13,9 +13,10 @@ const Section2 = () => {
     rest: { scale: 0.75, opacity: 0 },
     beat: {
       scale: [0, 1.1],
-      opacity: [1, 0.5],
+      opacity: [0, 1],
       transition: {
         duration: 1.7,
+        delay: 0.3,
         repeat: Infinity,
         repeatType: "loop" as const,
         ease: "easeInOut",
@@ -48,7 +49,7 @@ const Section2 = () => {
         id="features"
       >
         <div className="md:w-1/2">
-          <h1 className="capitalize text-2xl md:text-3xl font-bold mb-3 lg:w-[427px]">
+          <h1 className="capitalize text-2xl md:text-3xl xl:text-4xl font-bold mb-5 lg:w-[427px]">
             personalized investment recommendation
           </h1>
 
@@ -81,7 +82,7 @@ const Section2 = () => {
         />
 
         <div className="md:w-1/3">
-          <h1 className="md:w-[200px] capitalize text-2xl md:text-3xl font-bold">
+          <h1 className="md:w-[200px] capitalize text-2xl md:text-3xl xl:text-4xl mb-5 font-bold">
             portfolio diversification
           </h1>
 
@@ -96,7 +97,7 @@ const Section2 = () => {
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
         <div className="md:w-1/3">
-          <h1 className="capitalize text-3xl font-bold mb-3">
+          <h1 className="capitalize text-2xl md:text-3xl xl:text-4xl font-bold mb-5">
             Security & Privacy
           </h1>
 
@@ -123,7 +124,6 @@ const Section2 = () => {
             variants={lockVariants}
             initial="rest"
             whileInView="beat"
-            transition={{ delay: 0.9 }}
             cx="322.5"
             cy="311.5"
             rx="287"
@@ -135,7 +135,6 @@ const Section2 = () => {
             variants={lockVariants}
             initial="rest"
             whileInView="beat"
-            transition={{ delay: 0.5 }}
             cx="322.5"
             cy="312"
             rx="237"
@@ -147,7 +146,7 @@ const Section2 = () => {
             variants={lockVariants}
             initial="rest"
             whileInView="beat"
-            transition={{ delay: 0 }}
+            transition={{ delay: 1.5 }}
             cx="322.5"
             cy="311.5"
             rx="196"

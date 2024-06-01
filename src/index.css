@@ -19,11 +19,11 @@ section {
 }
 
 .sectionHeading {
-  @apply capitalize text-center mx-auto text-2xl md:text-3xl font-bold;
+  @apply capitalize text-center mx-auto text-2xl md:text-3xl xl:text-4xl font-bold;
 }
 
 .sectionSubHeading {
-  @apply text-sm text-center mx-auto mt-3;
+  @apply text-center mx-auto mt-3;
 }
 
 .heroSection {
@@ -65,7 +65,7 @@ nav {
 
 /* HERO SECTION */
 .heroLogoGrp {
-  @apply grid grid-cols-3 md:flex md:flex-row md:justify-center md:items-center gap-5 md:gap-10 mt-5 flex-wrap;
+  @apply grid grid-cols-3 md:flex md:flex-row md:justify-center md:items-center gap-5 md:gap-10 mt-5 mb-16 flex-wrap;
 }
 
 .heroLogo {
@@ -73,16 +73,20 @@ nav {
 }
 
 /* SECTION 3 */
+#pricing {
+  @apply lg:min-h-screen px-5 md:px-[62px] py-10;
+}
+
 .activePrice {
-  @apply bg-[#938888] font-bold;
+  @apply bg-black text-white font-bold;
 }
 
 .priceCardsGrp {
-  @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10 lg:gap-0 flex-wrap;
+  @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10 lg:gap-10 xl:gap-0 flex-wrap;
 }
 
 .priceCard {
-  @apply w-10/12 md:w-[343px] lg:w-auto 2xl:w-1/4 px-8 py-6 rounded-xl mx-auto bg-[#E7E6E6] bg-opacity-95;
+  @apply w-10/12 md:w-[343px] 2xl:w-1/4 px-7 py-6 rounded-xl mx-auto bg-[#E7E6E6] bg-opacity-95;
 }
 
 .cardHeading {
@@ -90,7 +94,7 @@ nav {
 }
 
 .cardSubHeading {
-  @apply font-light text-sm mt-2;
+  @apply font-light text-sm text-slate-600 mt-2;
 }
 
 .cardPrice {
@@ -98,7 +102,7 @@ nav {
 }
 
 .cardTextGrp {
-  @apply flex flex-row gap-2 items-center py-2 font-light;
+  @apply flex flex-row gap-2 items-center py-2 font-light text-sm text-slate-600;
 }
 
 .cardBtn {

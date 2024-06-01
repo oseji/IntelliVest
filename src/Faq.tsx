@@ -48,8 +48,6 @@ const Faq = () => {
 
   //this useEffect handles the visual toggling of the faq after the clickedFaq number changes
   useEffect(() => {
-    // console.log(clickedFaq);
-
     faqRefs.forEach((element, id) => {
       const faq = element.current;
 
@@ -62,7 +60,7 @@ const Faq = () => {
   }, [clickedFaq]);
 
   return (
-    <section className="relative">
+    <section className="relative mt-10 xl:mt-16">
       <div className="flex flex-col md:flex-row items-start lg:justify-between gap-10 lg:gap-20 ">
         <div>
           <h1 className="capitalize text-3xl font-bold">
