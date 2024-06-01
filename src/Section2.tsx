@@ -107,7 +107,10 @@ const Section2 = () => {
           </p>
         </div>
 
-        <svg
+        <motion.svg
+          variants={imageVariants}
+          initial="hidden"
+          whileInView="visible"
           className="md:w-1/2"
           width="100%"
           height="100%"
@@ -179,7 +182,7 @@ const Section2 = () => {
               <stop offset="1" stopColor="#A6A4A4" />
             </linearGradient>
           </defs>
-        </svg>
+        </motion.svg>
       </div>
     </section>
   );
