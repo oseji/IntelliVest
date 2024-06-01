@@ -11,7 +11,7 @@ import logo6 from "./assets/Logo 6.png";
 const HeroSection = () => {
   return (
     <section className="heroSection" id="about">
-      <div className="my-20 lg:my-40">
+      <div className="my-40">
         <TypeAnimation
           sequence={[
             "revolutionize your investments with AI-powered management",
