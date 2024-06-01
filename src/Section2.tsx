@@ -10,13 +10,14 @@ const Section2 = () => {
   };
 
   const lockVariants = {
-    rest: { scale: 0.75 },
+    rest: { scale: 0.75, opacity: 0 },
     beat: {
-      scale: 1,
+      scale: [0, 1.1],
+      opacity: [1, 0.5],
       transition: {
-        duration: 1,
+        duration: 1.7,
         repeat: Infinity,
-        repeatType: "reverse" as const,
+        repeatType: "loop" as const,
         ease: "easeInOut",
       },
     },
@@ -122,6 +123,7 @@ const Section2 = () => {
             variants={lockVariants}
             initial="rest"
             whileInView="beat"
+            transition={{ delay: 0.9 }}
             cx="322.5"
             cy="311.5"
             rx="287"
@@ -133,6 +135,7 @@ const Section2 = () => {
             variants={lockVariants}
             initial="rest"
             whileInView="beat"
+            transition={{ delay: 0.5 }}
             cx="322.5"
             cy="312"
             rx="237"
@@ -144,6 +147,7 @@ const Section2 = () => {
             variants={lockVariants}
             initial="rest"
             whileInView="beat"
+            transition={{ delay: 0 }}
             cx="322.5"
             cy="311.5"
             rx="196"

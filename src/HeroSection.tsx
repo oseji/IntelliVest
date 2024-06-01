@@ -32,7 +32,7 @@ const HeroSection = () => {
           goals, and take control of your finances.
         </p>
 
-        <button className="px-4 py-2  rounded-lg block mx-auto lg:mt-5 mt-7 bg-[#938888] hover:scale-110 transition ease-in-out duration-150">
+        <button className="px-[32px] py-[18px] rounded-xl block mx-auto lg:mt-5 mt-7 bg-[#938888] hover:scale-110 transition ease-in-out duration-150">
           Get Started
         </button>
       </div>

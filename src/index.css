@@ -15,7 +15,7 @@ html {
 }
 
 section {
-  @apply lg:min-h-screen90 px-5 md:px-20 py-10;
+  @apply lg:min-h-screen px-5 md:px-20 py-10;
 }
 
 .sectionHeading {
@@ -40,7 +40,7 @@ header {
 }
 
 nav {
-  @apply w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-between gap-10 transition ease-in-out duration-300 relative;
+  @apply w-full lg:w-2/3 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0 transition ease-in-out duration-300 relative;
 }
 
 .hideNav {
@@ -60,7 +60,7 @@ nav {
 }
 
 .navBtn {
-  @apply capitalize px-4 py-1 rounded-xl  hover:scale-105 transition ease-in-out duration-150;
+  @apply capitalize px-4 py-[6px] rounded-xl  hover:scale-105 transition ease-in-out duration-150;
 }
 
 /* HERO SECTION */
@@ -78,11 +78,11 @@ nav {
 }
 
 .priceCardsGrp {
-  @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10 xl:gap-0 flex-wrap;
+  @apply flex flex-col md:flex-row items-center justify-between mt-10 gap-10 lg:gap-0 flex-wrap;
 }
 
 .priceCard {
-  @apply w-10/12 md:w-[350px] lg:w-auto 2xl:w-1/4 p-3 rounded-xl mx-auto bg-[#E7E6E6] bg-opacity-95;
+  @apply w-10/12 md:w-[343px] lg:w-auto 2xl:w-1/4 px-8 py-6 rounded-xl mx-auto bg-[#E7E6E6] bg-opacity-95;
 }
 
 .cardHeading {
@@ -107,11 +107,11 @@ nav {
 
 /* FAQ */
 .faqGrp {
-  @apply w-full lg:w-3/4 mt-5 flex flex-col gap-10;
+  @apply w-full lg:w-3/4 gap-5 flex flex-col;
 }
 
 .faq {
-  @apply bg-[#E7E6E6] py-5 px-6 rounded-xl;
+  @apply py-5 px-6 bg-[#E7E6E6]  rounded-xl;
 }
 
 .faqHeading {

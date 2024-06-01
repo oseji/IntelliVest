@@ -37,6 +37,11 @@ const Faq = () => {
         newNum = 6;
       }
 
+      //if the same faq is clicked twice it should close
+      if (newNum === prevNum) {
+        newNum = 0;
+      }
+
       return newNum;
     });
   };

@@ -25,7 +25,7 @@ const Section3 = () => {
         and investment goals
       </p>
 
-      <div className="flex flex-row justify-center gap-2 md:gap-5 rounded-xl  w-fit mx-auto mt-5 ">
+      <div className="flex flex-row justify-center gap-2 md:gap-5 rounded-xl  w-fit mx-auto mt-5 bg-[#E7E6E6]  p-2">
         <button
           className={`px-4 py-2 rounded-xl transition ease-in-out duration-200 ${
             isMonthly ? "activePrice" : ""
