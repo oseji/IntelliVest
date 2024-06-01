@@ -63,7 +63,7 @@ const Faq = () => {
     <section className="relative mt-10 xl:mt-16">
       <div className="flex flex-col md:flex-row items-start lg:justify-between gap-10 lg:gap-20 ">
         <div>
-          <h1 className="capitalize text-3xl font-bold">
+          <h1 className="capitalize mx-auto text-2xl md:text-3xl xl:text-4xl font-bold">
             Frequently Asked Questions
           </h1>
 
