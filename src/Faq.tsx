@@ -43,7 +43,7 @@ const Faq = () => {
 
   //this useEffect handles the visual toggling of the faq after the clickedFaq number changes
   useEffect(() => {
-    console.log(clickedFaq);
+    // console.log(clickedFaq);
 
     faqRefs.forEach((element, id) => {
       const faq = element.current;

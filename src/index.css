@@ -3,7 +3,7 @@
 @tailwind utilities;
 @font-face {
   font-family: NeueHaasDisplayRoman;
-  src: url("../public/fonts/NeueHaasDisplayRoman.ttf");
+  src: url("/fonts/NeueHaasDisplayRoman.ttf");
 }
 
 html {
