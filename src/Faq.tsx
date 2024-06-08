@@ -1,4 +1,4 @@
-import { SyntheticEvent, useRef, useState, useEffect } from "react";
+import { SyntheticEvent, useRef } from "react";
 import { motion } from "framer-motion";
 import downArrow from "./assets/down arrow.png";
 
@@ -12,52 +12,21 @@ const Faq = () => {
     useRef<HTMLDivElement>(null),
   ];
 
-  const [clickedFaq, setClickedFaq] = useState<number>(0);
-
-  //this function handles toggling the clicked faqNumber
   const toggleFaq = (e: SyntheticEvent) => {
     e.preventDefault();
 
-    const faqNum = e.currentTarget.getAttribute("data-value");
+    const faqNum = Number(e.currentTarget.getAttribute("data-value"));
 
-    setClickedFaq((prevNum) => {
-      let newNum = prevNum;
-
-      if (faqNum === "1") {
-        newNum = 1;
-      } else if (faqNum === "2") {
-        newNum = 2;
-      } else if (faqNum === "3") {
-        newNum = 3;
-      } else if (faqNum === "4") {
-        newNum = 4;
-      } else if (faqNum === "5") {
-        newNum = 5;
-      } else if (faqNum === "6") {
-        newNum = 6;
-      }
-
-      //if the same faq is clicked twice it should close
-      if (newNum === prevNum) {
-        newNum = 0;
-      }
-
-      return newNum;
-    });
-  };
-
-  //this useEffect handles the visual toggling of the faq after the clickedFaq number changes
-  useEffect(() => {
     faqRefs.forEach((element, id) => {
       const faq = element.current;
 
-      if (id + 1 === clickedFaq) {
+      if (id + 1 === faqNum) {
         faq?.classList.toggle("hiddenAnswer");
-      } else if (id + 1 !== clickedFaq) {
+      } else if (id + 1 !== faqNum) {
         faq?.classList.add("hiddenAnswer");
       }
     });
-  }, [clickedFaq]);
+  };
 
   return (
     <section className="relative mt-10 xl:mt-16">
