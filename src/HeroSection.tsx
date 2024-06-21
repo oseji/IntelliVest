@@ -20,7 +20,7 @@ const HeroSection = () => {
             2000,
             "revolutionize your investments with AI-powered management",
           ]}
-          className="w-[360px] md:w-10/12 lg:w-[934px] mx-auto text-center font-bold  lg:text-6xl md:text-4xl text-2xl capitalize mt-16 lg:mt-0"
+          className="w-[360px] md:w-10/12 lg:w-[934px] h-[120px] mx-auto text-center font-bold  lg:text-6xl md:text-4xl text-2xl capitalize mt-16 lg:mt-0"
           wrapper="h1"
           speed={20}
           repeat={0}

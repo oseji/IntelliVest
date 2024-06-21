@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HeroSection from "./HeroSection";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
@@ -11,6 +11,8 @@ import closeMenu from "./assets/close.svg";
 function App() {
   const [menuToggled, setIsMenuToggled] = useState<boolean>(false);
   const [menuIcon, setMenuIcon] = useState<string>(menu);
+  const [showHeader, setShowHeader] = useState<boolean>(true);
+  const [lastY, setLastY] = useState<number>(0);
 
   const navBarRef = useRef<HTMLElement>(null);
 
@@ -28,9 +30,20 @@ function App() {
     navBar?.classList.toggle("hideNav");
   };
 
+  const handleStickyHeader = () => {
+    window.scrollY > lastY ? setShowHeader(false) : setShowHeader(true);
+    setLastY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyHeader);
+  }, [lastY]);
+
   return (
     <div className="App">
-      <header>
+      <header
+        className={`${showHeader ? "translate-y-0" : "-translate-y-full"}`}
+      >
         <div className="flex flex-row justify-between w-full lg:w-auto">
           <div className="logoGrp">
             <img src={logo} alt="finGenius logo" />
