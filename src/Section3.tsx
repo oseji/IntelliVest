@@ -27,9 +27,7 @@ const Section3 = () => {
 
       <div className="flex flex-row justify-center gap-2 md:gap-5 rounded-xl  w-fit mx-auto mt-5 bg-[#E7E6E6]  p-2">
         <button
-          className={`px-4 py-2 rounded-xl transition ease-in-out duration-200 ${
-            isMonthly ? "activePrice" : ""
-          }`}
+          className={`px-4 py-2 rounded-xl  ${isMonthly ? "activePrice" : ""}`}
           ref={activePriceRefs[0]}
           onClick={() => setIsMonthly(true)}
         >
@@ -37,9 +35,7 @@ const Section3 = () => {
         </button>
 
         <button
-          className={`px-4 py-2 rounded-xl transition ease-in-out duration-200 ${
-            !isMonthly ? "activePrice" : ""
-          }`}
+          className={`px-4 py-2 rounded-xl  ${!isMonthly ? "activePrice" : ""}`}
           ref={activePriceRefs[1]}
           onClick={() => setIsMonthly(false)}
         >
@@ -110,7 +106,6 @@ const Section3 = () => {
           <div className="flex flex-row items-end pb-2 border-b border-slate-500">
             <h1 className="cardPrice">{isMonthly ? "$19.99" : "$190.99"}</h1>
             <p className="font-light text-sm">
-              {" "}
               {isMonthly ? "/month" : "/year"}
             </p>
           </div>
