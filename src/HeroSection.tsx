@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <section className="heroSection" id="about">
       <div className=" flex flex-col gap-20">
-        <div className=" mt-32">
+        <div className=" mt-32 md:mt-0 lg:mt-32">
           <TypeAnimation
             sequence={[
               "revolutionize your investments with AI-powered management",
