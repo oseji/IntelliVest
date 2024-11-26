@@ -1,47 +1,137 @@
-import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import SplitType from "split-type";
+import { useEffect, useRef } from "react";
+
 import chartImg from "./assets/Frame 893.png";
 import chartImg2 from "./assets/Group 6421.png";
 import chartImg3 from "./assets/Frame 934.svg";
 
-const Section2 = () => {
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-  };
+gsap.registerPlugin(ScrollTrigger);
 
-  const lockVariants = {
-    rest: { scale: 0.75, opacity: 0 },
-    beat: {
-      scale: [0, 1.1],
-      opacity: [0, 1],
-      transition: {
-        duration: 1.7,
-        delay: 0.3,
-        repeat: Infinity,
-        repeatType: "loop" as const,
-        ease: "easeInOut",
-      },
-    },
-  };
+const Section2 = () => {
+  const headingRef = useRef<(HTMLHeadingElement | null)[]>([]);
+  const subTextRef = useRef<(HTMLParagraphElement | null)[]>([]);
+  const imageRef = useRef(null);
+  const otherImageRefs = useRef<(HTMLImageElement | null)[]>([]);
+
+  useEffect(() => {
+    headingRef.current.forEach((heading) => {
+      if (heading) {
+        const text = new SplitType(heading, {
+          types: "chars,words",
+        });
+
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+          text.chars,
+          { color: "#BABABA" },
+          {
+            color: "#000000",
+            stagger: 1,
+            duration: 1,
+
+            scrollTrigger: {
+              trigger: heading,
+              start: "top 80%",
+              end: "top 50%",
+              scrub: 3,
+            },
+          }
+        );
+      }
+    });
+
+    subTextRef.current.forEach((subtext) => {
+      if (subtext) {
+        const text = new SplitType(subtext, {
+          types: "chars,words",
+        });
+
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+          text.chars,
+          { opacity: 0, scale: 0, y: -20 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            animationDuration: 1,
+            stagger: 1,
+            duration: 1,
+
+            scrollTrigger: {
+              trigger: subtext,
+              start: "top 80%",
+              end: "top 50%",
+              scrub: 3,
+            },
+          }
+        );
+      }
+    });
+
+    otherImageRefs.current.forEach((image, index) => {
+      if (image) {
+        gsap.fromTo(
+          image,
+          { x: index === 0 ? 800 : -800 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: image,
+              start: "top 80%",
+              end: "top 50%",
+              scrub: 3,
+            },
+          }
+        );
+      }
+    });
+
+    // image animation
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { scale: 0.3 },
+        {
+          scale: 1,
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 3,
+          },
+        }
+      );
+    }
+  }, []);
 
   return (
     <section className="min-h-screen90">
-      <h1 className="sectionHeading" id="aiSolutions">
-        Simplify your finances with AI
+      <h1
+        className="sectionHeading"
+        id="aiSolutions"
+        ref={(el) => (headingRef.current[0] = el)}
+      >
+        Simplify Your Finances With AI
       </h1>
 
-      <p className="sectionSubHeading">
+      <p
+        className="sectionSubHeading"
+        ref={(el) => (subTextRef.current[0] = el)}
+      >
         Empower your finance with Artificial Intelligence. Seamlessly track
         expenses and investment.
       </p>
 
-      <motion.img
+      <img
         className="mt-5 md:w-3/4 mx-auto"
-        variants={imageVariants}
-        initial="hidden"
-        whileInView="visible"
         src={chartImg}
         alt="charts"
+        ref={imageRef}
       />
 
       <div
@@ -49,11 +139,15 @@ const Section2 = () => {
         id="features"
       >
         <div className="md:w-1/2">
-          <h1 className="capitalize text-2xl md:text-3xl xl:text-4xl font-bold mb-5 lg:w-[427px]">
-            personalized investment recommendation
+          <h1
+            className=" text-2xl md:text-3xl xl:text-4xl font-
+          bold mb-5 lg:w-[427px]"
+            ref={(el) => (headingRef.current[1] = el)}
+          >
+            Personalized Investment Recommendation
           </h1>
 
-          <p className=" lg:w-2/3">
+          <p className=" lg:w-2/3" ref={(el) => (subTextRef.current[1] = el)}>
             Stay ahead of the market with our data-driven recommendations to
             help you navigate the market with confidence and precision with
             low-risk picks, achieving your investment objectives and to enhance
@@ -61,32 +155,31 @@ const Section2 = () => {
           </p>
         </div>
 
-        <motion.img
+        <img
           className="md:w-1/2"
-          variants={imageVariants}
-          initial="hidden"
-          whileInView="visible"
           src={chartImg2}
           alt="cards"
+          ref={(el) => (otherImageRefs.current[0] = el)}
         />
       </div>
 
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
-        <motion.img
+        <img
           className="md:w-1/2"
-          variants={imageVariants}
-          initial="hidden"
-          whileInView="visible"
           src={chartImg3}
           alt="cards"
+          ref={(el) => (otherImageRefs.current[1] = el)}
         />
 
         <div className="md:w-1/3">
-          <h1 className="md:w-[200px] capitalize text-2xl md:text-3xl xl:text-4xl mb-5 font-bold">
-            portfolio diversification
+          <h1
+            className="md:w-[250px] text-2xl md:text-3xl xl:text-4xl mb-5 font-bold"
+            ref={(el) => (headingRef.current[2] = el)}
+          >
+            Portfolio Diversification
           </h1>
 
-          <p>
+          <p ref={(el) => (subTextRef.current[2] = el)}>
             Optimize your investment portfolio with strategic diversification.
             Our expertly crafted approach spreads risk across various asset
             classes, ensuring stability and maximizing returns tailored to your
@@ -97,11 +190,14 @@ const Section2 = () => {
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-0 pt-20">
         <div className="md:w-1/3">
-          <h1 className="capitalize text-2xl md:text-3xl xl:text-4xl font-bold mb-5">
+          <h1
+            className=" text-2xl md:text-3xl xl:text-4xl font-bold mb-5"
+            ref={(el) => (headingRef.current[3] = el)}
+          >
             Security & Privacy
           </h1>
 
-          <p>
+          <p ref={(el) => (subTextRef.current[3] = el)}>
             Your security and privacy are our top priorities. Rest assured
             knowing that our platform employs state-of-the- art encryption,
             stringent security protocols. and strict privacy measures to
@@ -109,10 +205,7 @@ const Section2 = () => {
           </p>
         </div>
 
-        <motion.svg
-          variants={imageVariants}
-          initial="hidden"
-          whileInView="visible"
+        <svg
           className="md:w-1/2"
           width="100%"
           height="100%"
@@ -120,10 +213,7 @@ const Section2 = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.ellipse
-            variants={lockVariants}
-            initial="rest"
-            whileInView="beat"
+          <ellipse
             cx="322.5"
             cy="311.5"
             rx="287"
@@ -131,10 +221,7 @@ const Section2 = () => {
             fill="#CBCACA"
             fillOpacity="0.1"
           />
-          <motion.ellipse
-            variants={lockVariants}
-            initial="rest"
-            whileInView="beat"
+          <ellipse
             cx="322.5"
             cy="312"
             rx="237"
@@ -142,11 +229,7 @@ const Section2 = () => {
             fill="#CBCACA"
             fillOpacity="0.1"
           />
-          <motion.ellipse
-            variants={lockVariants}
-            initial="rest"
-            whileInView="beat"
-            transition={{ delay: 1.5 }}
+          <ellipse
             cx="322.5"
             cy="311.5"
             rx="196"
@@ -185,7 +268,7 @@ const Section2 = () => {
               <stop offset="1" stopColor="#A6A4A4" />
             </linearGradient>
           </defs>
-        </motion.svg>
+        </svg>
       </div>
     </section>
   );

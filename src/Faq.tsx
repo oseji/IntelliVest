@@ -1,8 +1,13 @@
-import { SyntheticEvent, useRef } from "react";
-import { motion } from "framer-motion";
+import { SyntheticEvent, useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import downArrow from "./assets/down arrow.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Faq = () => {
+  const textRef = useRef(null);
   const faqRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -27,6 +32,22 @@ const Faq = () => {
       }
     });
   };
+
+  useEffect(() => {
+    gsap.fromTo(
+      textRef.current,
+      { y: 150 },
+      {
+        y: 0,
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 90%",
+          end: "top 70%",
+          scrub: 3,
+        },
+      }
+    );
+  }, []);
 
   return (
     <section className="relative mt-10 xl:mt-16">
@@ -142,17 +163,12 @@ const Faq = () => {
       </div>
 
       <div className="getStartedSection">
-        <motion.h1
+        <h1
           className="md:text-4xl text-lg font-bold w-1/2  md:w-[412px]"
-          initial={{ opacity: 0, y: 70 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: { delay: 0.15, duration: 0.5 },
-          }}
+          ref={textRef}
         >
           Your Money, Your Rules; Powerful Insights Awaits.
-        </motion.h1>
+        </h1>
 
         <button className="px-4 py-2 rounded-lg hover:scale-110 transition ease-in-out duration-150 bg-[#938888]">
           Get Started

@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+
 import tick from "./assets/system-uicons_check.png";
 
 const Section3 = () => {
@@ -8,11 +8,6 @@ const Section3 = () => {
     useRef<HTMLButtonElement>(null),
     useRef<HTMLButtonElement>(null),
   ];
-
-  const priceCardVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-  };
 
   return (
     <div id="pricing">
@@ -44,12 +39,7 @@ const Section3 = () => {
       </div>
 
       <div className="priceCardsGrp">
-        <motion.div
-          className="priceCard"
-          variants={priceCardVariants}
-          initial="hidden"
-          whileInView="visible"
-        >
+        <div className="priceCard">
           <h1 className="cardHeading">Basic plan</h1>
           <p className="cardSubHeading">
             Essential tools to manage finances efficiently.
@@ -86,14 +76,9 @@ const Section3 = () => {
           </div>
 
           <button className="cardBtn">get started</button>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="priceCard border border-black"
-          variants={priceCardVariants}
-          initial="hidden"
-          whileInView="visible"
-        >
+        <div className="priceCard border border-black">
           <div className="flex flex-row items-center gap-3">
             <h1 className="cardHeading">Premium plan</h1>
             <span className="text-xs px-2 py-0.5 bg-black text-white rounded-lg">
@@ -132,14 +117,9 @@ const Section3 = () => {
           </div>
 
           <button className="cardBtn">start 7 days trial</button>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="priceCard"
-          variants={priceCardVariants}
-          initial="hidden"
-          whileInView="visible"
-        >
+        <div className="priceCard">
           <h1 className="cardHeading">Elite plan</h1>
           <p className="cardSubHeading">
             VIP and pinnacle of financial empowerment...
@@ -176,7 +156,7 @@ const Section3 = () => {
           </div>
 
           <button className="cardBtn">get started</button>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

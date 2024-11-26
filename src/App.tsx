@@ -25,9 +25,11 @@ function App() {
       return newValue;
     });
 
-    menuToggled;
     const navBar = navBarRef.current;
-    navBar?.classList.toggle("hideNav");
+
+    !menuToggled
+      ? navBar?.classList.remove("hideNav")
+      : navBar?.classList.add("hideNav");
   };
 
   const handleStickyHeader = () => {
@@ -44,7 +46,7 @@ function App() {
       <header
         className={`${showHeader ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <div className="flex flex-row justify-between w-full lg:w-auto">
+        <div className="flex flex-row justify-between w-full lg:w-auto z-10">
           <div className="logoGrp">
             <img src={logo} alt="finGenius logo" />
             <h1 className="font-bold">FinGenius</h1>
