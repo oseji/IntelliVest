@@ -1,17 +1,50 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import SplitType from "split-type";
 
 import tick from "./assets/system-uicons_check.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Section3 = () => {
   const [isMonthly, setIsMonthly] = useState<boolean>(true);
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const activePriceRefs = [
     useRef<HTMLButtonElement>(null),
     useRef<HTMLButtonElement>(null),
   ];
 
+  useEffect(() => {
+    if (headingRef.current) {
+      const text = new SplitType(headingRef.current, {
+        types: "chars,words",
+      });
+
+      const tl = gsap.timeline();
+
+      tl.fromTo(
+        text.chars,
+        { color: "#BABABA" },
+        {
+          color: "#000000",
+          stagger: 1,
+          duration: 1,
+
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: 3,
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <div id="pricing">
-      <h1 className="sectionHeading">
+      <h1 className="sectionHeading" ref={headingRef}>
         Flexible Pricing Plans To Suit Your Needs.
       </h1>
 

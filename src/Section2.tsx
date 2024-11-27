@@ -12,8 +12,9 @@ gsap.registerPlugin(ScrollTrigger);
 const Section2 = () => {
   const headingRef = useRef<(HTMLHeadingElement | null)[]>([]);
   const subTextRef = useRef<(HTMLParagraphElement | null)[]>([]);
-  const imageRef = useRef(null);
   const otherImageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const ellipseRefs = useRef<(SVGElement | null)[]>([]);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     headingRef.current.forEach((heading) => {
@@ -91,7 +92,23 @@ const Section2 = () => {
       }
     });
 
-    // image animation
+    const ellipseTimeline = gsap.timeline({ repeat: -1, yoyo: true });
+    ellipseRefs.current.forEach((ellipse) => {
+      if (ellipse) {
+        ellipseTimeline.fromTo(
+          ellipse,
+          { opacity: 0.3, scale: 0.5, transformOrigin: "center" },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            transformOrigin: "center",
+            stagger: 0.3,
+          }
+        );
+      }
+    });
+
     if (imageRef.current) {
       gsap.fromTo(
         imageRef.current,
@@ -214,6 +231,7 @@ const Section2 = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <ellipse
+            ref={(el) => (ellipseRefs.current[0] = el)}
             cx="322.5"
             cy="311.5"
             rx="287"
@@ -222,6 +240,7 @@ const Section2 = () => {
             fillOpacity="0.1"
           />
           <ellipse
+            ref={(el) => (ellipseRefs.current[1] = el)}
             cx="322.5"
             cy="312"
             rx="237"
@@ -230,6 +249,7 @@ const Section2 = () => {
             fillOpacity="0.1"
           />
           <ellipse
+            ref={(el) => (ellipseRefs.current[2] = el)}
             cx="322.5"
             cy="311.5"
             rx="196"
@@ -238,6 +258,7 @@ const Section2 = () => {
             fillOpacity="0.1"
           />
           <circle
+            ref={(el) => (ellipseRefs.current[3] = el)}
             cx="322.5"
             cy="312"
             r="152"
@@ -245,6 +266,7 @@ const Section2 = () => {
             fillOpacity="0.1"
           />
           <circle
+            ref={(el) => (ellipseRefs.current[4] = el)}
             cx="322.5"
             cy="312"
             r="119"

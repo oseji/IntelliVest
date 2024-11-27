@@ -123,19 +123,26 @@ nav {
 }
 
 .faq {
-  @apply py-5 px-6 bg-[#E7E6E6]  rounded-xl;
+  @apply py-5 px-6 bg-[#E7E6E6] rounded-xl hover:scale-105 transition ease-in-out duration-200;
+}
+
+.faq img {
+  @apply transition ease-in-out duration-500;
 }
 
 .faqHeading {
-  @apply flex flex-row justify-between items-center cursor-pointer hover:scale-105 transition ease-in-out duration-200;
+  @apply flex flex-row justify-between items-center cursor-pointer;
 }
 
 .faqAnswer {
-  @apply font-light mt-2 text-sm transition ease-in-out duration-500;
+  @apply font-light mt-2 text-sm;
 }
 
 .hiddenAnswer {
-  @apply -translate-y-6 opacity-0 h-0 overflow-hidden;
+  @apply -translate-y-7 h-0 overflow-hidden transition-all ease-in-out duration-500;
+}
+.visibleAnswer {
+  @apply -translate-y-0 opacity-100  h-10 overflow-hidden transition-all ease-in-out duration-500;
 }
 
 .getStartedSection {
