@@ -127,7 +127,7 @@ nav {
 }
 
 .faq img {
-  @apply transition ease-in-out duration-500;
+  @apply transition ease-in-out duration-200;
 }
 
 .faqHeading {
@@ -139,10 +139,10 @@ nav {
 }
 
 .hiddenAnswer {
-  @apply -translate-y-7 h-0 overflow-hidden transition-all ease-in-out duration-500;
+  @apply -translate-y-7 h-0 overflow-hidden transition-all ease-in-out duration-200;
 }
 .visibleAnswer {
-  @apply -translate-y-0 opacity-100  h-10 overflow-hidden transition-all ease-in-out duration-500;
+  @apply -translate-y-0 opacity-100  h-10 overflow-hidden transition-all ease-in-out duration-200;
 }
 
 .getStartedSection {
