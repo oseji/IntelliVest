@@ -44,7 +44,7 @@ const Faq = () => {
       if (index + 1 === faqNum) {
         arrow?.classList.toggle("rotate-180");
       } else if (index + 1 !== faqNum) {
-        arrow?.classList.add("rotate-180");
+        arrow?.classList.remove("rotate-180");
       }
     });
   };
